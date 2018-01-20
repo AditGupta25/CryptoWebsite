@@ -72,7 +72,6 @@ function getCrypto(){
 	        	window.open(item.white_paper_url,"_blank")
 	        	//alert("Found it");
 	        	//console.log(item.white_paper_url)
-
 	        }else{
 
 	        }

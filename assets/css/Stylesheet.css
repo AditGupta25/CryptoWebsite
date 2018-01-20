@@ -17,15 +17,15 @@
 }
 
 .button {
+    outline: none;
     background-color: #4CAF50;
     border: none;
     color: white;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    border: none;
-    outline:none;
 }
+
 
 .button4 {
     border-radius: 12px;
@@ -38,8 +38,7 @@
     display: block;
     width: 130px;
     margin: 10px auto 0px auto;
-    border: none;
-    outline:none;
+
 }
 
 .button:hover {
