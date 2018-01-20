@@ -83,7 +83,7 @@ function getCrypto(){
 
 
 	// Set up and make the request.
-	request.open('GET', './data/data.json', true);
+	request.open('GET', 'https://raw.githubusercontent.com/AditGupta25/CryptoWebsite/master/data/data.json', true);
 	request.send(); 
 
 	
