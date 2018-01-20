@@ -1,24 +1,7 @@
 
-// function getCrypto(){
-
-// 	var name = document.getElementById("searchBar").value;
-// 	console.log(name);
-
-// 	$.ajax({
-// 	    url: "https://api.coinmarketcap.com/v1/ticker/?limit=0",
-// 	    dataType: 'jsonp',
-// 	    success: function(results){
-// 	        console.log(results);
-// 	    }
-// 	});
-
-// }
-
-
 // Get the <datalist> and <input> elements.
 
 window.onload = function() {
-
 	var dataList = document.getElementById('json-datalist');
 	var input = document.getElementById('ajax');
 
@@ -56,6 +39,52 @@ window.onload = function() {
 
 	// Set up and make the request.
 	request.open('GET', 'https://api.coinmarketcap.com/v1/ticker/?limit=0', true);
-	request.send();
-    
+	request.send();   
 };
+
+
+//This function takes user to white page for the crypto currency
+function getCrypto(){
+	var coinName = document.getElementById("ajax").value;
+
+
+	// Create a new XMLHttpRequest.
+	var request = new XMLHttpRequest();
+
+	// Handle state changes for the request.
+	request.onreadystatechange = function(response) {
+	  if (request.readyState === 4) {
+	    if (request.status === 200) {
+	      // Parse the JSON
+	      var jsonOptions = JSON.parse(request.responseText);
+
+	      // Loop over the JSON array.
+	      jsonOptions.forEach(function(item) {
+	        //console.log(item.white_paper_url);
+	        if(coinName == item.name){
+
+	        	window.open(item.white_paper_url,"_blank")
+	        	//alert("Found it");
+	        	//console.log(item.white_paper_url)
+
+	        }else{
+
+	        }
+
+	      });
+
+	      // Update the placeholder text.
+	    } else {
+	      // An error occured :(
+	     alert("There seems to be an error!");
+	    }
+	  }
+	};
+
+
+	// Set up and make the request.
+	request.open('GET', 'data.json', true);
+	request.send(); 
+
+	
+}
