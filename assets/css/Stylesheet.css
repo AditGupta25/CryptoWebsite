@@ -26,6 +26,8 @@
     font-size: 16px;
 }
 
+button:focus {outline:0;}
+
 
 .button4 {
     border-radius: 12px;
