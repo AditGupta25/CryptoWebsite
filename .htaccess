@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://cryptoscientist.azurewebsites.net/$1 [R=301,L]
