@@ -2,6 +2,12 @@
 // Get the <datalist> and <input> elements.
 
 window.onload = function() {
+
+	var loc = window.location.href+'';
+	if (loc.indexOf('http://')==0){
+	    window.location.href = loc.replace('http://','https://');
+	}
+
 	var dataList = document.getElementById('json-datalist');
 	var input = document.getElementById('ajax');
 

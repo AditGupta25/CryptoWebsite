@@ -12,6 +12,8 @@
     -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
     border-radius: 50px;
+    border: none;
+    outline:none;
 }
 
 .button {
@@ -21,6 +23,8 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    border: none;
+    outline:none;
 }
 
 .button4 {
@@ -34,6 +38,8 @@
     display: block;
     width: 130px;
     margin: 10px auto 0px auto;
+    border: none;
+    outline:none;
 }
 
 .button:hover {
