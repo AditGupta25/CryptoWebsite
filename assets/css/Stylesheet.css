@@ -27,6 +27,7 @@
 }
 
 .button {
+    cursor: pointer;
     background-color: #4CAF50;
     border: none;
     color: white;
@@ -39,10 +40,13 @@ button:focus {outline:0;}
 
 input[type="text"] {
     font-size:13px;
+    font-weight: bold;
+
 }
 
 
 .button4 {
+    cursor: pointer;
     border-radius: 12px;
     text-align: center;
     float:center;
