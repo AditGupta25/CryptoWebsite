@@ -93,7 +93,7 @@ function getCrypto(){
 	        //console.log(item.white_paper_url);
 	        if(coinName){
 	        	if(coinName == item.name){
-	        		window.open(item.white_paper_url,"_blank")
+	        		window.open(item.white_paper_url,"_system")
 	        	}
 	        }else {
 	        	input.placeholder = "  Sorry! We can't find this one!";
