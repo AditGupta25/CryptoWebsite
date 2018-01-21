@@ -94,12 +94,9 @@ function getCrypto(){
 	        if(coinName){
 	        	if(coinName == item.name){
 	        		window.open(item.white_paper_url,"_blank")
-	        	}else{
-	        		input.value = "";
-	        		input.placeholder = "   Sorry, we can't find this one!";
-	       		 }
+	        	}
 	        }else {
-	        	input.placeholder = "   Blank Spaces do not have White Papers :)";
+	        	input.placeholder = "  Sorry! We can't find this one!";
 	        }
 	        
 	      });
