@@ -1,3 +1,13 @@
+
+.fixedHeight {
+    color:Black;
+    font-size:10px;
+    max-height: 150px;
+    margin-bottom: 10px;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
 .specialInput {
     width: 65%;
     -webkit-border-radius: 50px;
@@ -17,7 +27,6 @@
 }
 
 .button {
-    outline: none;
     background-color: #4CAF50;
     border: none;
     color: white;
@@ -27,6 +36,10 @@
 }
 
 button:focus {outline:0;}
+
+input[type="text"] {
+    font-size:13px;
+}
 
 
 .button4 {
@@ -45,8 +58,10 @@ button:focus {outline:0;}
 
 .button:hover {
     background: orange;
+
 }
 
+button:focus { outline:0 !important; }
 
 .contain {
 max-width:960px;

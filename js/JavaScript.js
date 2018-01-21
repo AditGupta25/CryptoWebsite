@@ -14,6 +14,8 @@ window.onload = function() {
 	// Create a new XMLHttpRequest.
 	var request = new XMLHttpRequest();
 
+	var suggestions = new Array(" ");
+
 	// Handle state changes for the request.
 	request.onreadystatechange = function(response) {
 	  if (request.readyState === 4) {
@@ -24,15 +26,29 @@ window.onload = function() {
 	      // Loop over the JSON array.
 	      jsonOptions.forEach(function(item) {
 	        // Create a new <option> element.
-	        var option = document.createElement('option');
+	        //var option = document.createElement('option');
 	        // Set the value using the item in the JSON array.
-	        option.value = item.name;
+	        //option.value = item.name;
 	        // Add the <option> element to the <datalist>.
-	        dataList.appendChild(option);
+	        //dataList.appendChild(option);
+	        suggestions.push(item.name)
 	      });
 
 	      // Update the placeholder text.
-	      input.placeholder = "Search Your Cryptocurrency Here...";
+	      //console.log(suggestions);
+
+	      // $( "#ajax" ).autocomplete({
+     		//  source: suggestions
+   		  //  });
+
+		   $(function () {
+		   		$("#ajax").autocomplete({
+		   			source: suggestions
+		   		});
+		   		$( "#ajax" ).autocomplete("widget").addClass("fixedHeight");
+		   });
+
+	      input.placeholder = " Search your Cryptocurrency here...";
 	    } else {
 	      // An error occured :(
 	      // input.placeholder = "Couldn't load datalist options :(";
@@ -40,8 +56,9 @@ window.onload = function() {
 	  }
 	};
 
+
 	// Update the placeholder text.
-	input.placeholder = "Loading options...";
+	input.placeholder = " Loading options...";
 
 	// Set up and make the request.
 	request.open('GET', 'https://api.coinmarketcap.com/v1/ticker/?limit=0', true);
@@ -50,9 +67,16 @@ window.onload = function() {
 
 
 //This function takes user to white page for the crypto currency
+
+$(document).ready(function(){
+    $("#submitButton").click(function(){
+        getCrypto();
+    });
+});
+
 function getCrypto(){
 	var coinName = document.getElementById("ajax").value;
-
+	var input = document.getElementById('ajax');
 
 	// Create a new XMLHttpRequest.
 	var request = new XMLHttpRequest();
@@ -67,15 +91,17 @@ function getCrypto(){
 	      // Loop over the JSON array.
 	      jsonOptions.forEach(function(item) {
 	        //console.log(item.white_paper_url);
-	        if(coinName == item.name){
-
-	        	window.open(item.white_paper_url,"_blank")
-	        	//alert("Found it");
-	        	//console.log(item.white_paper_url)
-	        }else{
-
+	        if(coinName){
+	        	if(coinName == item.name){
+	        		window.open(item.white_paper_url,"_blank")
+	        	}else{
+	        		input.value = "";
+	        		input.placeholder = "   Sorry, we can't find this one!";
+	       		 }
+	        }else {
+	        	input.placeholder = "   Blank Spaces do not have White Papers :)";
 	        }
-
+	        
 	      });
 
 	      // Update the placeholder text.
