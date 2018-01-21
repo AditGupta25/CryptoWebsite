@@ -69,7 +69,7 @@ window.onload = function() {
 //This function takes user to white page for the crypto currency
 
 $(document).ready(function(){
-    $("#submitButton").click(function(){
+    $("#submitButton").on('click touchstart', function() {
         getCrypto();
     });
 });
