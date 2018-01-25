@@ -1,3 +1,10 @@
+input[type=text] {
+    width: 100%;
+    padding: 10px 15px;
+    margin: 8px 0;
+    font-size:18px;
+    /*box-sizing: border-box;*/
+}
 
 .fixedHeight {
     color:Black;
@@ -38,11 +45,6 @@
 
 button:focus {outline:0;}
 
-input[type="text"] {
-    font-size:13px;
-    font-weight: bold;
-
-}
 
 
 .button4 {

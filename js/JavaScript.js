@@ -43,12 +43,23 @@ window.onload = function() {
 
 		   $(function () {
 		   		$("#ajax").autocomplete({
-		   			source: suggestions
+		   			source: suggestions,
+		   			dataType: "json",
+		   			success: function( suggestions ) {
+                    	var escapedTerm=request.term.replace(/([\^\$\(\)\[\]\{\}\*\.\+\?\|\\])/gi, "\\$1");
+                   		var regex = new RegExp("(?![^&;]+;)(?!<[^<>]*)(" + escapedTerm + ")(?![^<>]*>)(?![^&;]+;)", "gi");
+                    	var result = $.map(suggestions, function(value){
+                        //console.log(value);
+                        value.label=value.label.replace(regex, "<span class='highlight'>$1</span>");
+                        return value;
+                    });
+                    response(result);
+                }
 		   		});
 		   		$( "#ajax" ).autocomplete("widget").addClass("fixedHeight");
 		   });
 
-	      input.placeholder = " Search your Cryptocurrency here...";
+	      input.placeholder = " Search White Papers Here...";
 	    } else {
 	      // An error occured :(
 	      // input.placeholder = "Couldn't load datalist options :(";
@@ -93,7 +104,15 @@ function getCrypto(){
 	        //console.log(item.white_paper_url);
 	        if(coinName){
 	        	if(coinName == item.name){
-	        		window.open(item.white_paper_url,"_system")
+	        		// setTimeout(() => window.open(item.white_paper_url),1000);
+	        		$.ajax({
+				      url:      item.white_paper_url,
+				      async:    true,
+				      dataType: "json",
+				      success:  function() {
+				        window.open(item.white_paper_url);
+				  	  }
+				    });
 	        	}
 	        }else {
 	        	input.placeholder = "  Sorry! We can't find this one!";

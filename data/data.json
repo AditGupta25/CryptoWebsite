@@ -1,4 +1,4 @@
-[
+[ 
     {
         "id": "bitcoin", 
         "name": "Bitcoin", 
@@ -58,7 +58,7 @@
         "id": "iota", 
         "name": "IOTA", 
         "symbol": "MIOTA", 
-        "white_paper_url": "1516410554"
+        "white_paper_url": "https://iota.org/IOTA_Whitepaper.pdf"
     }, 
     {
         "id": "eos", 
@@ -2929,7 +2929,7 @@
         "white_paper_url": "1516410562"
     }, 
     {
-        "id": "cannabiscoin", 
+        "id": "Cannabiscoin", 
         "name": "CannabisCoin", 
         "symbol": "CANN", 
         "white_paper_url": "1516410544"
