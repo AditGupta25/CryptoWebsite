@@ -104,15 +104,15 @@ function getCrypto(){
 	        //console.log(item.white_paper_url);
 	        if(coinName){
 	        	if(coinName == item.name){
-	        		// setTimeout(() => window.open(item.white_paper_url),1000);
-	        		$.ajax({
-				      url:      item.white_paper_url,
-				      async:    true,
-				      dataType: "json",
-				      success:  function() {
-				        window.open(item.white_paper_url);
-				  	  }
-				    });
+	        		 setTimeout(() => window.open(item.white_paper_url),1000);
+	        // 		$.ajax({
+				     //  url:      item.white_paper_url,
+				     //  async:    false,
+				     //  dataType: "json",
+				     //  success:  function() {
+				     //    window.open(item.white_paper_url);
+				  	  // }
+				     // });
 	        	}
 	        }else {
 	        	input.placeholder = "  Sorry! We can't find this one!";
